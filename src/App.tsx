@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar"
 import GameGrid from "./components/GameGrid"
 import GenreList from "./components/GenreList"
 import PlatformSelector from "./components/PlatformSelector"
+import SortSelector from "./components/SortSelector"
 
 export interface GameQuery {
   genre: Genre | null;
@@ -29,6 +30,7 @@ function App() {
           <GridItem>
             <HStack marginBottom={6}>
               <PlatformSelector onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })} selectedPlatform={gameQuery.platform} />
+              <SortSelector />
             </HStack>
             <GameGrid gameQuery={gameQuery} />
           </GridItem>
