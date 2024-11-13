@@ -2,7 +2,12 @@ import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/components/ui/me
 import { Button } from "./ui/button"
 import { BsChevronDown } from "react-icons/bs"
 
-const SortSelector = () => {
+interface Props {
+  onSelectSortOrder: (sortorder: string) => void;
+  sortOrder: string;
+}
+
+const SortSelector = ({onSelectSortOrder, sortOrder}: Props) => {
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date added" },
@@ -12,17 +17,19 @@ const SortSelector = () => {
     { value: "-rating", label: "Average rating" },
   ];
 
+  const currentSortOrder = sortOrders.find(order => order.value === sortOrder);
+
   return (
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="outline" size="sm">
-          Order by: Relevance
+          Order by: {currentSortOrder?.label || "Relevance"}
           <BsChevronDown />
         </Button>
       </MenuTrigger>
       <MenuContent>
         {sortOrders.map( (order) => (
-          <MenuItem key={order.value} value={order.value}>
+          <MenuItem onClick={() => onSelectSortOrder(order.value)} key={order.value} value={order.value}>
             {order.label}
           </MenuItem>
         ))}
