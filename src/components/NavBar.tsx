@@ -3,7 +3,11 @@ import logo from "../assets/logo.webp"
 import DarkModeSwitch from "./DarkModeSwitch"
 import SearchInput from "./SearchInput"
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({onSearch}: Props) => {
   return (
     <Container fluid>
       <HStack gap={4} >
@@ -11,7 +15,7 @@ const NavBar = () => {
           <Image src={logo} boxSize="60px" />
           <Text>GameHub</Text>
         </HStack>
-        <SearchInput />
+        <SearchInput onSearch={onSearch} />
         <DarkModeSwitch />
       </HStack>
     </Container>
