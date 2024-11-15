@@ -1,5 +1,5 @@
-import { Container, HStack, Image, Text } from "@chakra-ui/react"
-import logo from "../assets/logo.webp"
+import { Box, Container, HStack, Image } from "@chakra-ui/react"
+import logo from "../assets/logo.png"
 import DarkModeSwitch from "./DarkModeSwitch"
 import SearchInput from "./SearchInput"
 
@@ -9,16 +9,15 @@ interface Props {
 
 const NavBar = ({onSearch}: Props) => {
   return (
-    <Container fluid>
-      <HStack gap={4} >
-        <HStack flexShrink={0}>
+    <Box borderBottomWidth="1px">
+      <Container fluid>
+        <HStack gap={4} paddingY={4}>
           <Image src={logo} boxSize="60px" />
-          <Text>GameHub</Text>
+          <SearchInput onSearch={onSearch} />
+          <DarkModeSwitch />
         </HStack>
-        <SearchInput onSearch={onSearch} />
-        <DarkModeSwitch />
-      </HStack>
-    </Container>
+      </Container>
+    </Box>
   )
 }
 
