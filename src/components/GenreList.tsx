@@ -9,7 +9,7 @@ interface Props {
 }
 
 const GenreList = ({onSelectGenre, selectedGenre}: Props) => {
-  const {data, isLoading} = useGenre();
+  const {data, error, isLoading } = useGenre();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
@@ -18,7 +18,7 @@ const GenreList = ({onSelectGenre, selectedGenre}: Props) => {
       <List.Root variant="plain" display="flex" flexDir="column" gap={3}>
         {isLoading &&
           skeletons.map(skeleton => <List.Item key={skeleton}><GenreSkeleton /></List.Item>)}
-        {data.map(genre => (
+        {data?.results.map(genre => (
           <List.Item key={genre.id}>
             <HStack>
               <Image boxSize="32px" borderRadius={8}  src={getCroppedImageUrl(genre.image_background)} />
