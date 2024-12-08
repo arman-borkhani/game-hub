@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Genre } from "./hooks/useGenre"
-import { Platform } from "./hooks/useGames"
+import { Platform } from "./hooks/usePlatforms"
 import { Container, Grid, GridItem, HStack } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
 import GameGrid from "./components/GameGrid"
