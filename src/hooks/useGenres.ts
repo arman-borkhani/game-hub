@@ -1,6 +1,7 @@
 import { useQuery } from "react-query"
 import APIClient from "@/services/api-client"
 import genres from "@/data/genres"
+import ms from "ms"
 
 const apiClient = new APIClient<Genre>('/genres')
 
@@ -13,7 +14,7 @@ export interface Genre {
 const useGenres = () => useQuery({
   queryKey: ['genres'],
   queryFn: apiClient.getAll,
-  staleTime: 20 * 60 * 60 * 1000, // 24h
+  staleTime: ms('24h'),
   initialData: genres
 })
 
