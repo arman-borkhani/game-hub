@@ -11,7 +11,7 @@ const HomePage = () => {
     <Grid templateColumns={{
       base: "1fr",
       lg: "240px 1fr"
-    }} paddingY={6}>
+    }}>
       <GridItem hideBelow="lg" paddingRight={6}>
         <GenreList />
       </GridItem>
