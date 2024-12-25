@@ -1,7 +1,7 @@
-import { Platform } from "@/entities/Platform"
+import Platform from "@/entities/Platform"
 
 
-export interface Game {
+export default interface Game {
   id: number;
   name: string;
   slug: string;

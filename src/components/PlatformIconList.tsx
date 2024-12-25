@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { Platform } from "@/entities/Platform"
+import Platform from "@/entities/Platform"
 import { HStack } from "@chakra-ui/react"
 import { FaWindows, FaPlaystation, FaXbox, FaApple, FaLinux, FaAndroid } from "react-icons/fa"
 import { MdPhoneIphone } from "react-icons/md"
