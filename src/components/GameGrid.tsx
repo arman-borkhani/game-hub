@@ -1,5 +1,5 @@
 import useGames from "@/hooks/useGames"
-import { Grid, Spinner } from "@chakra-ui/react"
+import { Grid, Spinner, Text, VStack } from "@chakra-ui/react"
 import { Alert } from "@/components/ui/alert"
 import GameCard from "./GameCard"
 import GameCardSkeleton from "./GameCardSkeleton"
@@ -19,7 +19,12 @@ const GameGrid = () => {
       dataLength={fetchedGamesCount} 
       hasMore={!!hasNextPage}
       next={() => fetchNextPage()}
-      loader={<Spinner />}
+      loader={
+        <VStack marginTop={5}>
+          <Spinner color="colorPalette.600" />
+          <Text color="colorPalette.600">Loading...</Text>
+        </VStack>
+      }
     >
       <Grid templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap="6">
         {isLoading &&
