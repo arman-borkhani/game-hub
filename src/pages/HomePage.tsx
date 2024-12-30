@@ -10,7 +10,7 @@ const HomePage = () => {
     <Container fluid>
     <Grid templateColumns={{
       base: "1fr",
-      lg: "240px 1fr"
+      lg: "200px 1fr"
     }}>
       <GridItem hideBelow="lg" paddingRight={6}>
         <GenreList />
