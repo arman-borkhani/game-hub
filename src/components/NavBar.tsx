@@ -9,9 +9,11 @@ const NavBar = () => {
     <Box borderBottomWidth="1px">
       <Container fluid>
         <HStack gap={4} paddingY={4}>
-          <Link to="/">
-            <Image src={logo} boxSize="60px" />
-          </Link>
+          <Box flexShrink={0}>
+            <Link to="/">
+              <Image src={logo} boxSize="60px" />
+            </Link>
+          </Box>
           <SearchInput />
           <DarkModeSwitch />
         </HStack>
