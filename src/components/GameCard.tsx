@@ -14,7 +14,9 @@ interface Props {
 const GameCard = ({game}: Props) => {
   return (
     <Card.Root overflow="hidden">
-      <LazyLoadImage height={270} effect="blur" placeholderSrc={getCroppedImageUrl(game.background_image)} src={getCroppedImageUrl(game.background_image)}></LazyLoadImage>
+      <Link to={'/games/' + game.slug}>
+        <LazyLoadImage height={270} effect="blur" placeholderSrc={getCroppedImageUrl(game.background_image)} src={getCroppedImageUrl(game.background_image)}></LazyLoadImage>
+      </Link>
       <Card.Body>
         <HStack justifyContent="space-between" marginBottom={3}>
           <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
