@@ -20,7 +20,7 @@ const GenreList = () => {
           <List.Item key={genre.id}>
             <HStack>
               <Image boxSize="32px" borderRadius={8}  src={getCroppedImageUrl(genre.image_background)} />
-              <Link fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal' } onClick={() => setSelectedGenreId(genre.id)} fontSize="lg" variant="plain">{genre.name}</Link>
+              <Link fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal' } onClick={() => setSelectedGenreId(genre.id)} variant="plain">{genre.name}</Link>
             </HStack>
           </List.Item>
         ))}
