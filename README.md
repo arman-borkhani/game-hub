@@ -1,50 +1,16 @@
-# React + TypeScript + Vite
+# Video Game Discovery App
+A React-based web application designed to help users discover new video games based on their preferences. Built using **Chakra UI** for styling, **React Router** for navigation and **Zustant** as state-management tool, the app allows users to search, filter, and sort through a large database of games using the [RAWG](https://rawg.io/apidocs) API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Check out the live demo of the app at [https://game-hub-one-sable.vercel.app](https://game-hub-one-sable.vercel.app)
 
-Currently, two official plugins are available:
+![Game Hub Project Screenshot](screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Installation
 
-## Expanding the ESLint configuration
+To run the project in your local environment, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. [Clone the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your local machine.
+2. Navigate to the project directory and install the dependencies by running `npm install`.
+3. Go to [rawg.io](https://rawg.io), register for a free account, and obtain your API Key.
+4. Create a `.env` file in the project's root directory and store your API Key in the VITE_API_KEY environment variable: `VITE_API_KEY="your_api_key_should_be_here"`.
+5. Start the development server by running `npm run dev`.
